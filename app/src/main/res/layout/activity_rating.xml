@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+
+    <Space
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="5dip"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="2dip">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    tools:text="LIKE %s"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/description_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="Roboto-Regular"
+                android:lineSpacingExtra="4dp"
+                android:gravity="center"
+                android:lines="3"
+                android:text="If you like this app, Please give us five stars"
+                android:textColor="#de000000"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <song.downloader.music.tube.arate.BStarPointContainer
+                    android:id="@+id/star1"
+                    android:onClick="onRatingButton1to4Clicked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/star_iv1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_margin="7dp"
+                        android:src="@drawable/ic_rating_star_null" />
+
+                </song.downloader.music.tube.arate.BStarPointContainer>
+
+                <song.downloader.music.tube.arate.BStarPointContainer
+                    android:id="@+id/star2"
+                    android:onClick="onRatingButton1to4Clicked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/star_iv2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_margin="7dp"
+                        android:src="@drawable/ic_rating_star_null" />
+
+                </song.downloader.music.tube.arate.BStarPointContainer>
+
+                <song.downloader.music.tube.arate.BStarPointContainer
+                    android:id="@+id/star3"
+                    android:onClick="onRatingButton1to4Clicked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/star_iv3"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_margin="7dp"
+                        android:src="@drawable/ic_rating_star_null" />
+
+                </song.downloader.music.tube.arate.BStarPointContainer>
+
+                <song.downloader.music.tube.arate.BStarPointContainer
+                    android:id="@+id/star4"
+                    android:onClick="onRatingButtonClicked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/star_iv4"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_margin="7dp"
+                        android:src="@drawable/ic_rating_star_null" />
+
+                </song.downloader.music.tube.arate.BStarPointContainer>
+
+
+                <song.downloader.music.tube.arate.BStarPointContainer
+                    android:id="@+id/star5"
+                    android:onClick="onRatingButtonClicked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:id="@+id/star_iv5"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_margin="7dp"
+                        android:src="@drawable/ic_rating_star_null" />
+
+                </song.downloader.music.tube.arate.BStarPointContainer>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="24dp">
+
+                <RelativeLayout
+                    style="@style/WhiteRoundCornerButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bl_round_corner_negative_btn_bg1"
+                    android:onClick="onCancelClicked">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@drawable/ic_rating_angry"
+                        android:drawablePadding="6dp"
+                        android:ellipsize="end"
+                        android:fontFamily="Roboto-Medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Cancel"
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/WhiteRoundCornerButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/dl_round_corner_negative_btn_bg2"
+                    android:onClick="onRatingButtonClicked">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@drawable/cl_ic_rating_laugh"
+                        android:drawablePadding="6dp"
+                        android:ellipsize="end"
+                        android:fontFamily="Roboto-Medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="5 Star"
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:onClick="onDismissButtonClicked"
+            android:layout_margin="12dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_rating_close" />
+
+        <ImageView
+            android:id="@+id/handle_icon_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="10dp"
+            android:rotation="-40"
+            android:src="@drawable/dl_ic_hand_icon" />
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

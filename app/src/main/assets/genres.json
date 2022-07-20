@@ -1,0 +1,110 @@
+[
+  {
+    "id": 5,
+    "title": " Pop ",
+    "image": "file:///android_asset/addicted/canvass.jpg",
+    "followers": 212031
+  },
+  {
+    "id": 65,
+    "title": " Rnb ",
+    "image": "file:///android_asset/addicted/slope.jpg",
+    "followers": 217022
+  },
+  {
+    "id": 2777,
+    "title": " Classical ",
+    "image": "file:///android_asset/addicted/coach.jpg",
+    "followers": 142603
+  },
+  {
+    "id": 1953,
+    "title": "Country",
+    "image": "file:///android_asset/addicted/country.jpg",
+    "followers": 122109
+  },
+  {
+    "id": 100,
+    "title": " Dance ",
+    "image": "file:///android_asset/addicted/dance.jpg",
+    "followers": 122093
+  },
+  {
+    "id": 327,
+    "title": " Electronic ",
+    "image": "file:///android_asset/addicted/electronic.jpg",
+    "followers": 114220
+  },
+  {
+    "id": 39,
+    "title": " Hiphop ",
+    "image": "file:///android_asset/addicted/bridge.jpg",
+    "followers": 112729
+  },
+  {
+    "id": 22,
+    "title": " Jazz ",
+    "image": "file:///android_asset/addicted/jazz.jpg",
+    "followers": 122918
+  },
+  {
+    "id": 25,
+    "title": " Metal ",
+    "image": "file:///android_asset/addicted/metal.jpg",
+    "followers": 112532
+  },
+  {
+    "id": 1834,
+    "title": " Chillout ",
+    "image": "file:///android_asset/addicted/chillout.jpg",
+    "followers": 152162
+  },
+  {
+    "id": 33,
+    "title": " Punk ",
+    "image": "file:///android_asset/addicted/punk.jpg",
+    "followers": 111292
+  },
+  {
+    "id": 23,
+    "title": " Rock ",
+    "image": "file:///android_asset/addicted/beat.jpg",
+    "followers": 121478
+  },
+  {
+    "id": 444,
+    "title": " Indie ",
+    "image": "file:///android_asset/addicted/cord.jpg",
+    "followers": 111269
+  },
+  {
+    "id": 1954332,
+    "title": " Filmscore ",
+    "image": "file:///android_asset/addicted/techno.jpg",
+    "followers": 112492
+  },
+  {
+    "id": 362,
+    "title": " Ambient ",
+    "image": "file:///android_asset/addicted/trance.jpg",
+    "followers": 112307
+  },
+  {
+    "id": 69,
+    "title": " Folk ",
+    "image": "file:///android_asset/addicted/triphop.jpg",
+    "followers": 111264
+  },
+  {
+    "id": 1925,
+    "title": " Latin ",
+    "image": "file:///android_asset/addicted/intrumental.jpg",
+    "followers": 112012
+  },
+  {
+    "id": 180,
+    "title": " Blues ",
+    "image": "file:///android_asset/addicted/wake.jpg",
+    "followers": 124059
+  }
+]

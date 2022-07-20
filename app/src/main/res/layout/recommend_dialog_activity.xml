@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000"
+    android:orientation="vertical">
+
+    <Space
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/al_recom_dialog_bg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/kl_recom_round_white_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:text="AD"
+                android:textColor="#E0E0E0" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_recommend_close" />
+
+            <ImageView
+                android:id="@+id/recom_app_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:scaleType="fitXY" />
+
+            <song.downloader.music.tube.recommend.StarLevelLayoutView
+                android:id="@+id/recom_app_star"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recom_app_icon"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/iv_app_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recom_app_star"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:singleLine="true"
+                android:text="1111111"
+                android:textColor="#343434"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/recom_app_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_app_name"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="12dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:text="2222222222222"
+                android:textColor="#343434"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/recom_cta_tv"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/recom_app_desc"
+                android:layout_margin="10dp"
+                android:background="@drawable/cl_recom_selector_download_btn"
+                android:gravity="center"
+                android:text="Download Now"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
+        </RelativeLayout>
+    </FrameLayout>
+</FrameLayout>

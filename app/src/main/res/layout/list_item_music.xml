@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+
+    <Space
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/image_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="6dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_default_cover"
+            tools:ignore="RtlHardcoded" />
+
+        <LinearLayout
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/itemThumbnailView"
+                android:layout_toRightOf="@+id/itemThumbnailView"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#222222"
+                android:textSize="18sp"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/artist_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/itemThumbnailView"
+                android:layout_toRightOf="@+id/itemThumbnailView"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                tools:text="artist_tv artist_tv" />
+
+            <LinearLayout
+                android:id="@+id/duration_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/duration_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/purple"
+                    android:textSize="14sp"
+                    tools:ignore="RtlHardcoded"
+                    tools:text="1:09:10" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/download_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingVertical="13dp"
+            android:src="@drawable/icon_item_download" />
+
+        <ImageView
+            android:id="@+id/play_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingVertical="15dp"
+            android:src="@drawable/icon_item_play" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="74dp"
+        android:background="@color/colorPrimary" />
+
+</LinearLayout>
+

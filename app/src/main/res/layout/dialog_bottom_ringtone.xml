@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+
+
+    <Space
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawablePadding="16dp"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="Title"
+        android:textColor="#222222"
+        android:textSize="14sp" />
+
+    <View style="@style/HorizontalDivider" />
+
+    <TextView
+        android:id="@+id/phone_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawableLeft="@drawable/cl_icon_phone"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="Set as ringtone"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+    <View style="@style/HorizontalDivider" />
+
+    <TextView
+        android:id="@+id/alarm_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawableLeft="@drawable/zl_icon_alarm"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="Set as alarm"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+    <View style="@style/HorizontalDivider" />
+
+    <TextView
+        android:id="@+id/notification_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawableLeft="@drawable/icon_tones"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="Set as notification"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+    <View style="@style/HorizontalDivider" />
+</LinearLayout>

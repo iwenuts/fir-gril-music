@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MusicDownloader</string>
+    <string name="action_more_apps">More Apps</string>
+    <string name="action_recommend">Recommend Ad</string>
+    <string name="download_dialog_title">Download: %1$s</string>
+    <string name="download_dialog_content">Downloading…</string>
+    <string name="share_content">https://play.google.com/store/apps/details?id=%s Strong Recommended Music Downloader</string>
+    <string name="share_text">Share</string>
+    <string name="set_ringtone_success">Set Ringtone Success!</string>
+    <string name="set_notification_success">Set Notification Success!</string>
+    <string name="set_alarm_success">Set Alarm Success!</string>
+    <string name="set_error">Oops, Error!</string>
+    <string name="tab_one">Server1</string>
+    <string name="tab_two">Server2</string>
+    <string name="tab_three">Server3</string>
+    <string name="tab_four">Server4</string>
+    <string name="tab_five">Server5</string>
+    <string name="tab_six">Server6</string>
+
+    <string name="tab_seven">Server7</string>
+    <string name="rating_title">LIKE %s</string>
+    <string name="loading_text">Loading…</string>
+    <string name="empty">Empty</string>
+    <string name="reload">Try reload</string>
+
+    <string name="tab1">tab1</string>
+    <string name="tab2">tab2</string>
+    <string name="tab3">tab3</string>
+    <string name="tab4">tab4</string>
+    <string name="tab5">tab5</string>
+
+</resources>

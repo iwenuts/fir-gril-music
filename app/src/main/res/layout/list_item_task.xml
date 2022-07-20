@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+
+    <Space
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorPrimary" />
+
+    <LinearLayout
+        android:id="@+id/item_bkg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="6dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_default_cover"
+            tools:ignore="RtlHardcoded" />
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/artist_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                tools:text="artist_tv artist_tv" />
+
+            <TextView
+                android:id="@+id/item_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/purple"
+                android:textSize="14sp"
+                tools:ignore="RtlHardcoded"
+                tools:text="0%" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/item_play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:src="@drawable/icon_item_play" />
+
+
+        <ImageView
+            android:id="@+id/item_ringtone"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingVertical="10dp"
+            android:src="@drawable/kl_icon_item_ringtone" />
+
+        <ImageView
+            android:id="@+id/item_delete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:src="@drawable/icon_item_delete" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="74dp"
+        android:background="@color/colorPrimary" />
+
+</LinearLayout>
+
+

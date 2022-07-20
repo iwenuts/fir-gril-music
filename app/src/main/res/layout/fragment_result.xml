@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+
+
+    <Space
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+
+    <TextView
+        android:id="@+id/error_tv"
+        android:layout_width="150dip"
+        android:layout_height="150dip"
+        android:layout_gravity="center"
+        android:drawablePadding="6.0dip"
+        android:drawableTop="@drawable/icon_neterror"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:text="Error\nClick to Try Again!"
+        android:textColor="@color/purple"
+        android:textSize="16dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/empty_tv"
+        android:layout_width="250dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:drawablePadding="6.0dip"
+        android:drawableTop="@drawable/zl_icon_empty"
+        android:ellipsize="end"
+        android:text="So Sorry\nNot contain this related music.\nThank you for your patience."
+        android:textColor="@color/purple"
+        android:textSize="16dp"
+        android:visibility="gone" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/aviLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:indicatorColor="@color/loading"
+        app:indicatorName="BallPulseIndicator" />
+
+</FrameLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#29B6F5</color>
+    <color name="colorPrimaryDark">#29B6F5</color>
+    <color name="colorAccent">@color/blue</color>
+
+    <color name="white">#ffffff</color>
+    <color name="yellow">#ffff00</color>
+    <color name="purple">#9C27B1</color>
+    <color name="blue">#3F51B2</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorAccent1">#159589</color>
+
+    <color name="loading">#B43695</color>
+    <color name="dark_gray">#787878</color>
+    <color name="light_gray">#e9e9e9</color>
+
+
+    <color name="white_60">#59FFFFFF</color>
+
+    <!-- 文字颜色 -->
+    <color name="text_dark">#222222</color>
+    <color name="text_heavy">#666666</color>
+    <color name="text_light">#999999</color>
+
+    <color name="text_hint">#BBBBBB</color>
+    <color name="text_hint_gray">#999999</color>
+    <color name="text_orange">#FF8600</color>
+    <color name="text_red">#F15353</color>
+    <color name="text_green">#159588</color>
+
+    <color name="color_15_alpha_black">#26000000</color>
+    <color name="color_30_alpha_black">#4c000000</color>
+    <color name="color_38_alpha_black">#61000000</color>
+    <color name="color_50_alpha_black">#7F000000</color>
+    <color name="color_54_alpha_black">#89000000</color>
+    <color name="color_60_alpha_black">#99000000</color>
+    <color name="color_65_alpha_black">#a6000000</color>
+    <color name="color_67_alpha_black">#AB000000</color>
+    <color name="color_70_alpha_black">#B2000000</color>
+    <color name="color_75_alpha_black">#BF000000</color>
+    <color name="color_80_alpha_black">#CC000000</color>
+
+</resources>
