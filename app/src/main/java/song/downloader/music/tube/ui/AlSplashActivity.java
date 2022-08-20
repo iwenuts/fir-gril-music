@@ -49,8 +49,6 @@ public class AlSplashActivity extends AppCompatActivity {
     boolean configDone = false;
     boolean openAdDone = false;
 
-//    private FirebaseRemoteConfig firebaseRemoteConfig;
-    public static MediatorLiveData<Boolean> applovinInited = new MediatorLiveData<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,40 +57,11 @@ public class AlSplashActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);// 设置全屏
-//        if (AlMainActivity.sIsInActivity) {
-//            startMainActivity();
-//            return;
-//        }
-        setContentView(R.layout.activity_splash);
-
-//        try {
-//            firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
-//            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder().setMinimumFetchIntervalInSeconds(3600).build();
-//            firebaseRemoteConfig.setDefaultsAsync(R.xml.remote_config_defaults);
-//            firebaseRemoteConfig.setConfigSettingsAsync(configSettings);
-//            firebaseRemoteConfig.fetchAndActivate();
-//        } catch (Exception e) {
-//
-//        }
-
-        if (MusicApp.appLovinSdk == null) {
-            applovinInited.observe(this, aBoolean -> {
-                if (aBoolean) {
-                    MaxOpenInterstitial.getInstance().loadInterstitialAd(this);
-                }
-            });
-            String app_key = JiaMiEncrypted.applovin_sdk_key;
-            AppLovinSdkSettings appLovinSdkSettings = new AppLovinSdkSettings(getApplicationContext());
-            MusicApp.appLovinSdk = AppLovinSdk.getInstance(app_key, appLovinSdkSettings, this);
-            MusicApp.appLovinSdk.setMediationProvider("max");
-            MusicApp.appLovinSdk.initializeSdk(this, new AppLovinSdk.SdkInitializationListener() {
-                @Override
-                public void onSdkInitialized(final AppLovinSdkConfiguration configuration) {
-                    applovinInited.postValue(true);
-                }
-            });
+        if (MainActivity.sIsInActivity) {
+            startMainActivity();
+            return;
         }
-
+        setContentView(R.layout.activity_splash);
 
         initViews();
         initDatas();

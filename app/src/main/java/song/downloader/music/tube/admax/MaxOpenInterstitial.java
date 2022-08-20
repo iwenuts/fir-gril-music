@@ -35,16 +35,8 @@ public class MaxOpenInterstitial implements MaxAdListener, MaxAdRevenueListener 
     private int retryAttempt;
     private AdLoadingDialog mAdLoadingDialog;
 
-    public void loadInterstitialAd(Activity activity) {
-        if (activity == null) {
-            return;
-        }
-        if (appLovinSdk == null) {
-            return;
-        }
-        if (!MusicApp.config.ad) {
-            return;
-        }
+    private void loadInterstitialAd(Activity activity) {
+
         try {
             interstitialAd = new MaxInterstitialAd(BuildConfig.maxOpenInterstitialId, appLovinSdk, activity);
             interstitialAd.setListener(this);
@@ -74,6 +66,8 @@ public class MaxOpenInterstitial implements MaxAdListener, MaxAdRevenueListener 
         return interstitialAd.isReady();
     }
 
+    private boolean isMissAd = false;
+
     public void show() {
         if (isReady()) {
             try {
@@ -83,7 +77,10 @@ public class MaxOpenInterstitial implements MaxAdListener, MaxAdRevenueListener 
             } catch (Exception e) {
 
             }
+            isMissAd = false;
             interstitialAd.showAd();
+        } else {
+            isMissAd = true;
         }
     }
 
@@ -112,9 +109,13 @@ public class MaxOpenInterstitial implements MaxAdListener, MaxAdRevenueListener 
     }
 
     public void showInterstitial(Activity activity) {
+        if (appLovinSdk == null) {
+            return;
+        }
         if (!MusicApp.config.ad) {
             return;
         }
+        loadInterstitialAd(activity);
         mAdLoadingDialog = new AdLoadingDialog(activity);
         mAdLoadingDialog.setOnDismissListener(dialog -> {
             show();
@@ -126,7 +127,7 @@ public class MaxOpenInterstitial implements MaxAdListener, MaxAdRevenueListener 
                     mAdLoadingDialog.dismiss();
                 }
             } catch (Exception e) {
-
+                show();
             }
         }, 5000);
     }
@@ -135,8 +136,9 @@ public class MaxOpenInterstitial implements MaxAdListener, MaxAdRevenueListener 
     @Override
     public void onAdLoaded(final MaxAd maxAd) {
         retryAttempt = 0;
-        System.out.println("---------- max open : onAdLoaded ");
-        show();
+        if (isMissAd) {
+            show();
+        }
     }
 
 

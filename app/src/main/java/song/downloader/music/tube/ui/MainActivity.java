@@ -166,7 +166,7 @@ public class MainActivity extends BaseActivity implements IPlayback.Callback, Fo
 //            mSearchView.inflateOverflowMenu(R.menu.search_menu2);
 //        }
 
-            MaxOpenInterstitial.getInstance().showInterstitial(this);
+        MaxOpenInterstitial.getInstance().showInterstitial(this);
 
 //        if (BuildConfig.DEBUG) {
 //            MyApp.appLovinSdk.showMediationDebugger();

@@ -18,6 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.multidex.MultiDexApplication;
 
 import com.applovin.sdk.AppLovinSdk;
+import com.applovin.sdk.AppLovinSdkConfiguration;
+import com.applovin.sdk.AppLovinSdkSettings;
 import com.cyl.musicapi.BaseApiImpl;
 import encrypt.pck.JiaMiEncrypted;
 import com.flurry.android.FlurryAgent;
@@ -68,6 +70,13 @@ public class MusicApp extends MultiDexApplication implements Application.Activit
             public void accept(Throwable e) throws Exception {
                 e.printStackTrace();
             }
+        });
+
+        String app_key = JiaMiEncrypted.applovin_sdk_key;
+        AppLovinSdkSettings appLovinSdkSettings = new AppLovinSdkSettings(getApplicationContext());
+        MusicApp.appLovinSdk = AppLovinSdk.getInstance(app_key, appLovinSdkSettings, this);
+        MusicApp.appLovinSdk.setMediationProvider("max");
+        MusicApp.appLovinSdk.initializeSdk(this, configuration -> {
         });
 
         registerActivityLifecycleCallbacks(this);
