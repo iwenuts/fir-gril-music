@@ -137,7 +137,7 @@
  -dontwarn okhttp3.internal.platform.ConscryptPlatform
 
 # my own bean-------------------------------------------------
--keep class * extends song.downloader.music.tube.bean.BaseBean {*;}
+-keep class * extends music.mp3.song.app.song.music.tube.bean.BaseBean {*;}
 
 # gson--------------------------------------------------------
 ##---------------Begin: proguard configuration for Gson  ----------

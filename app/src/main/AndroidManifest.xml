@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="song.downloader.music.tube">
+    package="music.mp3.song.app.song.music.tube">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -22,7 +22,7 @@
     </queries>
 
     <application
-        android:name="song.downloader.music.tube.MusicApp"
+        android:name="music.mp3.song.app.song.music.tube.MusicApp"
         android:allowBackup="true"
         android:hasFragileUserData="true"
         android:icon="@mipmap/ic_launcher"
@@ -34,7 +34,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name="song.downloader.music.tube.ui.AlSplashActivity"
+            android:name="music.mp3.song.app.song.music.tube.ui.AlSplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -45,14 +45,14 @@
 
 
         <activity
-            android:name="song.downloader.music.tube.ui.DailyPickGenreListActivity"
+            android:name="music.mp3.song.app.song.music.tube.ui.DailyPickGenreListActivity"
             android:configChanges="orientation|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustNothing" />
 
         <activity
-            android:name="song.downloader.music.tube.ui.MainActivity"
+            android:name="music.mp3.song.app.song.music.tube.ui.MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
@@ -60,37 +60,37 @@
 
 
         <activity
-            android:name="song.downloader.music.tube.ui.AlGenresActivity"
+            android:name="music.mp3.song.app.song.music.tube.ui.AlGenresActivity"
             android:configChanges="orientation|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustNothing" />
 
         <service
-            android:name="song.downloader.music.tube.player.PlaybackService"
+            android:name="music.mp3.song.app.song.music.tube.player.PlaybackService"
             android:exported="true">
             <intent-filter>
-                <action android:name="song.downloader.music.tube.ACTION.PLAY_TOGGLE" />
-                <action android:name="song.downloader.music.tube.ACTION.PLAY_NEXT" />
-                <action android:name="song.downloader.music.tube.ACTION.PLAY_LAST" />
-                <action android:name="song.downloader.music.tube.ACTION.STOP_SERVICE" />
+                <action android:name="music.mp3.song.app.song.music.tube.ACTION.PLAY_TOGGLE" />
+                <action android:name="music.mp3.song.app.song.music.tube.ACTION.PLAY_NEXT" />
+                <action android:name="music.mp3.song.app.song.music.tube.ACTION.PLAY_LAST" />
+                <action android:name="music.mp3.song.app.song.music.tube.ACTION.STOP_SERVICE" />
             </intent-filter>
         </service>
 
         <activity
-            android:name="song.downloader.music.tube.arate.ARatingActivity"
+            android:name="music.mp3.song.app.song.music.tube.arate.ARatingActivity"
             android:theme="@style/DialogStyle" />
         <activity
-            android:name="song.downloader.music.tube.recommend.RecommendDialogActivity"
+            android:name="music.mp3.song.app.song.music.tube.recommend.RecommendDialogActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:theme="@style/recom_dialog" />
         <activity
-            android:name="song.downloader.music.tube.ui.SearchActivity"
+            android:name="music.mp3.song.app.song.music.tube.ui.SearchActivity"
             android:screenOrientation="portrait" />
 
         <receiver
-            android:name="song.downloader.music.tube.firebase.InstallReferrer"
+            android:name="music.mp3.song.app.song.music.tube.firebase.InstallReferrer"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.vending.INSTALL_REFERRER" />
@@ -109,7 +109,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
         <provider
-            android:name="song.downloader.music.tube.bean.ZAppFileProvider"
+            android:name="music.mp3.song.app.song.music.tube.bean.ZAppFileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">

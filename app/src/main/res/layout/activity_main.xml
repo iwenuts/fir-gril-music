@@ -5,10 +5,6 @@
               android:orientation="vertical">
 
 
-    <Space
-        android:visibility="gone"
-        android:layout_width="0dp"
-        android:layout_height="0dp" />
 
     <View
         android:id="@+id/status_bar_view2"
@@ -217,7 +213,7 @@
             app:floatingSearch_searchHint="Search music.."
             app:floatingSearch_showSearchKey="true"
             app:floatingSearch_suggestionsListAnimDuration="250"
-            app:layout_behavior="song.downloader.music.tube.widget.AlFloatSearchBehavior"
+            app:layout_behavior="music.mp3.song.app.song.music.tube.widget.AlFloatSearchBehavior"
             />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MusicDownloader</string>
+    <string name="app_name">Mp3Downloader</string>
     <string name="action_more_apps">More Apps</string>
     <string name="action_recommend">Recommend Ad</string>
     <string name="download_dialog_title">Download: %1$s</string>

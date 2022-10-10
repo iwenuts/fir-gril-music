@@ -1,17 +1,18 @@
 apply plugin: 'com.android.application'
 apply plugin: 'stringfog'
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
+apply plugin:  'com.google.firebase.crashlytics'
 
 stringfog {
     implementation 'com.github.megatronking.stringfog.xor.StringFogImpl'
     enable true
-    fogPackages = ['org.schabi.newpipe.extractor','song.downloader.music.tube']
+    fogPackages = ['org.schabi.newpipe.extractor', 'song.downloader.music.tube']
 }
 apply plugin: "xml-class-guard"
 xmlClassGuard {
     mappingFile = file("xml-class-mapping.txt")
-    packageChange = ["music.downloader.song.tube.load": "song.downloader.music.tube"]
-    moveDir = ["music.downloader.song.tube.load": "song.downloader.music.tube"]
+    packageChange = ["song.downloader.music.tube": "music.mp3.song.app.song.music.tube"]
+    moveDir = ["song.downloader.music.tube": "music.mp3.song.app.song.music.tube"]
 }
 
 android {
@@ -20,33 +21,33 @@ android {
         applicationId "alice"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 134
-        versionName "1.3.4"
+        versionCode 136
+        versionName "1.3.6"
         multiDexEnabled true
     }
     signingConfigs {
         release {
-            storeFile file("c62doru5vo.jks")
-            storePassword "c62doru5vo"
-            keyAlias "c62doru5vo"
-            keyPassword "c62doru5vo"
+            storeFile file("c854m1ws3n.jks")
+            storePassword "c854m1ws3n"
+            keyAlias "c854m1ws3n"
+            keyPassword "c854m1ws3n"
         }
     }
 
     buildTypes {
         release {
 
-            buildConfigField('String', 'maxOpenInterstitialId', '"086d0093ca35bb63"')
-            buildConfigField('String', 'maxBackInterstitialId', '"2bcde0d5af5f4ebf"')
-            buildConfigField('String', 'maxDownInterstitialId', '"a1effa895e795237"')
+            buildConfigField('String', 'maxOpenInterstitialId', '"245ad3c885395116"')
+            buildConfigField('String', 'maxBackInterstitialId', '"e6c0a2cf653c681c"')
+            buildConfigField('String', 'maxDownInterstitialId', '"800faf074a16e75d"')
 
-            buildConfigField('String', 'maxBannerId', '"6954192d72fdf1d3"')
-            buildConfigField('String', 'maxDownRewardId', '"e6e30f905432614d"')
-            buildConfigField('String', 'maxMrecId', '"81df01f11ef70217"')
-            buildConfigField('String', 'FLURRY_API_KEY', '"7S4SZR9R6PQTHYSP4Z2P"')
+            buildConfigField('String', 'maxBannerId', '"839a4fee76c0d491"')
+            buildConfigField('String', 'maxDownRewardId', '"d89f295a1d43dc2c"')
+            buildConfigField('String', 'maxMrecId', '"f6e2c5f04f5aeb1d"')
+            buildConfigField('String', 'FLURRY_API_KEY', '"9FRRKCWWHTS4BKSBZ5BB"')
 
             signingConfig signingConfigs.release
-            applicationIdSuffix ".music.downloader.download.mp3.music.song.app"
+            applicationIdSuffix ".music.downloader.download.music.mp3.song.app"
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -166,8 +167,8 @@ dependencies {
     // youtube
 //    implementation 'com.github.teamnewpipe:NewPipeExtractor:19c0e8700db3af35e5dfc58e4eea50e75d7c4c61'
 //    implementation 'com.github.TeamNewPipe:NewPipeExtractor:v0.21.14'
-
-    api 'com.github.teamnewpipe:NewPipeExtractor:19c0e8700db3af35e5dfc58e4eea50e75d7c4c61'
+    api 'com.github.TeamNewPipe:NewPipeExtractor:5c710da160f488bb40ab2cf4469bec9bd4cefd38'
+    //   api 'com.github.teamnewpipe:NewPipeExtractor:19c0e8700db3af35e5dfc58e4eea50e75d7c4c61'
 //    api 'com.github.TeamNewPipe:NewPipeExtractor:b77c72fb8826c3ffca0be5f96b066cca0a07b1c9'
     // implementation 'com.blankj:utilcodex:1.30.6'
 
@@ -214,14 +215,12 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.13.1'
 
     implementation 'com.github.megatronking.stringfog:xor:3.0.0'
-
-
     implementation 'com.github.caiyonglong:musicapi:1.1.4'
     implementation "androidx.work:work-runtime:2.7.1"
-    debugImplementation project(':firebase')
-//    implementation platform('com.google.firebase:firebase-bom:29.0.3')
-//    implementation 'com.google.firebase:firebase-config'
-//    implementation 'com.google.firebase:firebase-analytics'
+
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
 }
 apply plugin: 'applovin-quality-service'
 applovin {

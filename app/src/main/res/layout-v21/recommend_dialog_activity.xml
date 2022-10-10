@@ -58,7 +58,7 @@
                 android:elevation="4dp"
                 android:scaleType="fitXY" />
 
-            <song.downloader.music.tube.recommend.StarLevelLayoutView
+            <music.mp3.song.app.song.music.tube.recommend.StarLevelLayoutView
                 android:id="@+id/recom_app_star"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

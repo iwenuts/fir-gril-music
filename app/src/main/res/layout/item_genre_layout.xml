@@ -7,7 +7,7 @@
     android:paddingBottom="10dp">
 
 
-    <song.downloader.music.tube.widget.RoundRectLayout
+    <music.mp3.song.app.song.music.tube.widget.RoundRectLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:radius="6dp"
@@ -31,6 +31,6 @@
             android:textColor="@color/white"
             android:textSize="16sp" />
 
-    </song.downloader.music.tube.widget.RoundRectLayout>
+    </music.mp3.song.app.song.music.tube.widget.RoundRectLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
