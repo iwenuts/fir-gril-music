@@ -217,4 +217,12 @@ public class FlurryEventReport {
 
         }
     }
+
+
+    public static void referrer(String event, String value) {
+        Map<String, String> params = new HashMap<>();
+        params.put("value", value);
+        FlurryAgent.logEvent("refre_"+event, params);
+    }
+
 }

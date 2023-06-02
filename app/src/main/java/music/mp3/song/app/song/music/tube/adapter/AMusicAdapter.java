@@ -30,6 +30,7 @@ import music.mp3.song.app.song.music.tube.admax.MaxRewardedAds;
 import music.mp3.song.app.song.music.tube.ui.MainActivity;
 import music.mp3.song.app.song.music.tube.ui.MyDownloadManager;
 import music.mp3.song.app.song.music.tube.player.APlayer;
+import music.mp3.song.app.song.music.tube.widget.NativeTemplatesFrameLayout;
 import music.mp3.song.app.song.music.tube.ztools.AdRewardedDialog;
 import music.mp3.song.app.song.music.tube.ztools.ImageHelper;
 import music.mp3.song.app.song.music.tube.ztools.ShareUtils;
@@ -94,110 +95,121 @@ public class AMusicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         if (holder instanceof VideoSmallHolder) {
             final Music track = (Music) mDatas.get(position);
             final VideoSmallHolder viewHolder = (VideoSmallHolder) holder;
-            viewHolder.titleTv.setText(track.getTitle());
-            viewHolder.artistTv.setText(track.getArtistName());
-            if (!TextUtils.isEmpty(track.getImage())) {
-                ImageHelper.loadMusic(viewHolder.imageIv, track.getImage(), mActivity, 60, 60);
-            }
+
+            viewHolder.nativeAdLayout.setVisibility(View.GONE);
+            if (TextUtils.equals("-1001", track.id)) {
+                viewHolder.itemContentLayout.setVisibility(View.GONE);
+                viewHolder.nativeAdLayout.setVisibility(View.VISIBLE);
+                viewHolder.nativeAdLayout.loadAd();
+            } else {
+                viewHolder.itemContentLayout.setVisibility(View.VISIBLE);
+                viewHolder.titleTv.setText(track.getTitle());
+                viewHolder.artistTv.setText(track.getArtistName());
+                if (!TextUtils.isEmpty(track.getImage())) {
+                    ImageHelper.loadMusic(viewHolder.imageIv, track.getImage(), mActivity, 60, 60);
+                }
 //            if (!TextUtils.isEmpty(track.getDuration())) {
 //                viewHolder.durationTv.setText(String.valueOf(track.getDuration()));
 //                viewHolder.durationLy.setVisibility(View.VISIBLE);
 //            } else {
 //                viewHolder.durationLy.setVisibility(View.GONE);
 //            }
-            viewHolder.downloadIv.setTag(track);
-            viewHolder.downloadIv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final Music bean = (Music) v.getTag();
-                    tryDownload(mActivity, bean);
-                }
-            });
+                viewHolder.downloadIv.setTag(track);
+                viewHolder.downloadIv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final Music bean = (Music) v.getTag();
+                        tryDownload(mActivity, bean);
+                    }
+                });
 
-            View.OnClickListener playClick = new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final Music bean = (Music) v.getTag();
-                    int postion = (int) v.getTag(R.string.app_name);
-                    if (bean.channel == Music.CHANNEL_YT || bean.channel == Music.CHANNEL_SOUND) {
-                        if (TextUtils.isEmpty(bean.getDownloadUrl())) {
-                            handleYT_SoundUrl(mActivity, bean, true);
-                        } else {
-                            APlayer.playSingle(bean);
-                        }
-                    } else if (bean.channel == Music.CHANNEL_MP3juice) {
-                        String id = bean.id;
-                        showProcessDialog(mActivity, "Playing");
-                        Mp3Juice.getMusicDownUrl(id, new CallBack<String>() {
-                            @Override
-                            public void onFail() {
-                                dismissDialog();
-                                ToastUtils.showShortToast("Error");
+                View.OnClickListener playClick = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final Music bean = (Music) v.getTag();
+                        int postion = (int) v.getTag(R.string.app_name);
+                        if (bean.channel == Music.CHANNEL_YT || bean.channel == Music.CHANNEL_SOUND) {
+                            if (TextUtils.isEmpty(bean.getDownloadUrl())) {
+                                handleYT_SoundUrl(mActivity, bean, true);
+                            } else {
+                                APlayer.playSingle(bean);
                             }
-
-                            @Override
-                            public void onSuccess(String url) {
-                                dismissDialog();
-                                doneHandleUrl(mActivity, bean, true, url, url);
-
-                            }
-                        });
-                    } else if (bean.channel == Music.CHANNEL_QQ) {
-                        if (TextUtils.isEmpty(bean.getDownloadUrl())) {
+                        } else if (bean.channel == Music.CHANNEL_MP3juice) {
                             String id = bean.id;
-                            BaseApiImpl.INSTANCE.getSongUrl("qq", id, 128000, songBean -> {
-                                String url = songBean.getData().getUrl();
-                                doneHandleUrl(mActivity, bean, true, url, url);
-                                return Unit.INSTANCE;
-                            }, () -> {
-                                return Unit.INSTANCE;
-                            });
-                        } else {
-                            APlayer.playSingle(bean);
-                        }
-                    } else if (bean.channel == Music.CHANNEL_WYY) {
-                        if (TextUtils.isEmpty(bean.getDownloadUrl())) {
-                            String id = bean.id;
-                            BaseApiImpl.INSTANCE.getSongUrl("netease", id, 128000, songBean -> {
-                                String url = songBean.getData().getUrl();
-                                doneHandleUrl(mActivity, bean, true, url, url);
-                                return Unit.INSTANCE;
-                            }, () -> {
-                                return Unit.INSTANCE;
-                            });
-
-                        } else {
-                            APlayer.playSingle(bean);
-                        }
-                    } else if (bean.channel == Music.CHANNEL_NHAC) {
-                        if (TextUtils.isEmpty(bean.getDownloadUrl())) {
-                            NhacMusic.getSongInfo(bean.id, new CallBack<String>() {
+                            showProcessDialog(mActivity, "Playing");
+                            Mp3Juice.getMusicDownUrl(id, new CallBack<String>() {
                                 @Override
                                 public void onFail() {
+                                    dismissDialog();
+                                    ToastUtils.showShortToast("Error");
                                 }
 
                                 @Override
-                                public void onSuccess(String s) {
-                                    String url = s;
+                                public void onSuccess(String url) {
+                                    dismissDialog();
                                     doneHandleUrl(mActivity, bean, true, url, url);
+
                                 }
                             });
+                        } else if (bean.channel == Music.CHANNEL_QQ) {
+                            if (TextUtils.isEmpty(bean.getDownloadUrl())) {
+                                String id = bean.id;
+                                BaseApiImpl.INSTANCE.getSongUrl("qq", id, 128000, songBean -> {
+                                    String url = songBean.getData().getUrl();
+                                    doneHandleUrl(mActivity, bean, true, url, url);
+                                    return Unit.INSTANCE;
+                                }, () -> {
+                                    return Unit.INSTANCE;
+                                });
+                            } else {
+                                APlayer.playSingle(bean);
+                            }
+                        } else if (bean.channel == Music.CHANNEL_WYY) {
+                            if (TextUtils.isEmpty(bean.getDownloadUrl())) {
+                                String id = bean.id;
+                                BaseApiImpl.INSTANCE.getSongUrl("netease", id, 128000, songBean -> {
+                                    String url = songBean.getData().getUrl();
+                                    doneHandleUrl(mActivity, bean, true, url, url);
+                                    return Unit.INSTANCE;
+                                }, () -> {
+                                    return Unit.INSTANCE;
+                                });
+
+                            } else {
+                                APlayer.playSingle(bean);
+                            }
+                        } else if (bean.channel == Music.CHANNEL_NHAC) {
+                            if (TextUtils.isEmpty(bean.getDownloadUrl())) {
+                                NhacMusic.getSongInfo(bean.id, new CallBack<String>() {
+                                    @Override
+                                    public void onFail() {
+                                    }
+
+                                    @Override
+                                    public void onSuccess(String s) {
+                                        String url = s;
+                                        doneHandleUrl(mActivity, bean, true, url, url);
+                                    }
+                                });
+                            } else {
+                                APlayer.playSingle(bean);
+                            }
                         } else {
-                            APlayer.playSingle(bean);
+                            APlayer.playList(mDatas, postion);
                         }
-                    } else {
-                        APlayer.playList(mDatas, postion);
                     }
-                }
-            };
+                };
 
-            viewHolder.playIv.setTag(track);
-            viewHolder.playIv.setTag(R.string.app_name, position);
-            viewHolder.playIv.setOnClickListener(playClick);
+                viewHolder.playIv.setTag(track);
+                viewHolder.playIv.setTag(R.string.app_name, position);
+                viewHolder.playIv.setOnClickListener(playClick);
 
-            viewHolder.itemView.setTag(track);
-            viewHolder.itemView.setTag(R.string.app_name, position);
-            viewHolder.itemView.setOnClickListener(playClick);
+                viewHolder.itemView.setTag(track);
+                viewHolder.itemView.setTag(R.string.app_name, position);
+                viewHolder.itemView.setOnClickListener(playClick);
+
+            }
+
 
         }
     }
@@ -421,6 +433,12 @@ public class AMusicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         ImageView downloadIv;
         @BindView(R.id.play_iv)
         ImageView playIv;
+
+        @BindView(R.id.native_ad)
+        NativeTemplatesFrameLayout nativeAdLayout;
+        @BindView(R.id.item_content_layout)
+        LinearLayout itemContentLayout;
+
 
         public VideoSmallHolder(View itemView) {
             super(itemView);

@@ -180,8 +180,7 @@ public class ResultFragment extends BaseFragment {
                     error();
                 }
             });
-        }
-        else if (mType == TYPE_YT) {
+        } else if (mType == TYPE_YT) {
             YTManager.getInstance().search(mQuery, new YTSearch.onSearchListener() {
 
                 @Override
@@ -215,8 +214,7 @@ public class ResultFragment extends BaseFragment {
                     empty();
                 }
             });
-        }
-        else if (mType == TYPE_FREE_MP3) {
+        } else if (mType == TYPE_FREE_MP3) {
             FreeMp3Cloud.search(mQuery, new FreeMp3Cloud.SearchListener() {
                 @Override
                 public void onError(boolean empty) {
@@ -233,9 +231,7 @@ public class ResultFragment extends BaseFragment {
                     dealData();
                 }
             });
-        }
-
-        else if (mType == TYPE_QQ) {
+        } else if (mType == TYPE_QQ) {
             BaseApiImpl.INSTANCE.searchSongSingle(mQuery, "QQ", 50, 1, new Function1<SearchSingleData, Unit>() {
                 @Override
                 public Unit invoke(SearchSingleData searchSingleData) {
@@ -262,8 +258,7 @@ public class ResultFragment extends BaseFragment {
                     return Unit.INSTANCE;
                 }
             });
-        }
-        else if (mType == TYPE_WYY) {
+        } else if (mType == TYPE_WYY) {
             BaseApiImpl.INSTANCE.searchSongSingle(mQuery, "NETEASE", 50, 1, new Function1<SearchSingleData, Unit>() {
                 @Override
                 public Unit invoke(SearchSingleData searchSingleData) {
@@ -291,8 +286,7 @@ public class ResultFragment extends BaseFragment {
                     return Unit.INSTANCE;
                 }
             });
-        }
-        else if (mType == TYPE_NHAC) {
+        } else if (mType == TYPE_NHAC) {
             NhacMusic.search(mQuery, new CallBack<List<NhacMusicListBean.DataBean>>() {
                 @Override
                 public void onFail() {
@@ -322,8 +316,7 @@ public class ResultFragment extends BaseFragment {
                     }
                 }
             });
-        }
-        else if (mType == TYPE_ARCHIVE) {
+        } else if (mType == TYPE_ARCHIVE) {
             HttpArchiveMusic.search(mQuery, new HttpArchiveMusic.SearchListener() {
                 @Override
                 public void onError(boolean empty) {
@@ -342,8 +335,7 @@ public class ResultFragment extends BaseFragment {
             });
 
 
-        }
-        else if(mType == TYPE_MP3JUICE){
+        } else if (mType == TYPE_MP3JUICE) {
             Mp3Juice.search(mQuery, new Mp3Juice.SearchListener() {
                 @Override
                 public void onError(boolean empty) {
@@ -406,7 +398,17 @@ public class ResultFragment extends BaseFragment {
 
         if (mDatas == null || mDatas.size() == 0) {
             empty();
+        } else {
+            Music bean = new Music();
+            bean.id = "-1001";
+            int index = MusicApp.config.sni - 1;
+            if (mDatas.size() > index) {
+                mDatas.add(index, bean);
+            } else {
+                mDatas.add(bean);
+            }
         }
+
 
         if (null != mAdapter) {
             mAdapter.notifyDataSetChanged();

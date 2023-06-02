@@ -137,23 +137,12 @@ public class SearchActivity extends BaseActivity {
         if (BuildConfig.DEBUG) {
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_YT, mQuery));
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_JAMENDO, mQuery));
-            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_FREE_MP3, mQuery));
-            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_QQ, mQuery));
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_WYY, mQuery));
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_NHAC, mQuery));
-            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_ARCHIVE, mQuery));
             return;
         }
         if (MusicApp.config.yt) {
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_YT, mQuery));
-        }
-
-        if (MusicApp.config.mp3juice) {
-            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_MP3JUICE, mQuery));
-        }
-
-        if (MusicApp.config.free_mp3) {
-            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_FREE_MP3, mQuery));
         }
 
         if (MusicApp.config.wyy) {
@@ -162,9 +151,7 @@ public class SearchActivity extends BaseActivity {
         if (MusicApp.config.nhac) {
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_NHAC, mQuery));
         }
-        if (MusicApp.config.archive) {
-            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_ARCHIVE, mQuery));
-        }
+
         mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_JAMENDO, mQuery));
     }
 
@@ -197,23 +184,16 @@ public class SearchActivity extends BaseActivity {
             mFragments.clear();
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_YT, mQuery));
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_JAMENDO, mQuery));
-            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_FREE_MP3, mQuery));
-//            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_QQ, mQuery));
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_WYY, mQuery));
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_NHAC, mQuery));
-            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_ARCHIVE, mQuery));
         }
 
         if (BuildConfig.DEBUG) {
             mFragments.clear();
-//            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_YT, mQuery));
-//            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_MP3JUICE, mQuery));
+            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_YT, mQuery));
             mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_JAMENDO, mQuery));
-//            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_FREE_MP3, mQuery));
-//            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_QQ, mQuery));
-//            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_WYY, mQuery));
-//            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_NHAC, mQuery));
-//            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_ARCHIVE, mQuery));
+            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_WYY, mQuery));
+            mFragments.add(ResultFragment.newInstance(ResultFragment.TYPE_NHAC, mQuery));
         }
 
 

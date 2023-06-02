@@ -12,11 +12,10 @@
         android:orientation="vertical">
 
 
-
         <View
-            android:visibility="gone"
             android:layout_width="0dp"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:visibility="gone" />
 
 
         <LinearLayout
@@ -35,37 +34,11 @@
             android:background="#20ca0000"
             android:orientation="horizontal">
 
-            <View
-                android:layout_width="6dp"
-                android:layout_height="match_parent"
-                android:background="#dcec0000" />
-
-            <LinearLayout
+            <music.mp3.song.app.song.music.tube.widget.ReferrerBannerLayout
+                android:id="@+id/banner_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:orientation="vertical">
+                android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/tvNotice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textColor="@color/purple"
-                    android:textSize="14sp"
-                    tools:text="Please update new version" />
-
-                <TextView
-                    android:id="@+id/tvLink"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="12dp"
-                    android:text="INSTALL NOW"
-                    android:textColor="@color/blue"
-                    android:textSize="12sp" />
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -106,10 +79,10 @@
 
         <LinearLayout
             android:id="@+id/mrecLayout"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/daily_picks_panel"

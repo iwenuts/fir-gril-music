@@ -76,6 +76,7 @@ public final class Config extends BaseBean {
 
     public boolean toPlayer = true;
     public String wayp = "none";
+    public int sni = 3;
 
     public ReferrerStream getUseReferrer() {
         return referrer;

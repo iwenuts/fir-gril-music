@@ -8,13 +8,14 @@
     android:focusable="true"
     android:orientation="vertical">
 
-
-    <View
-        android:visibility="gone"
-        android:layout_width="0dp"
-        android:layout_height="0dp" />
+    <music.mp3.song.app.song.music.tube.widget.NativeTemplatesFrameLayout
+        android:id="@+id/native_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
     <LinearLayout
+        android:id="@+id/item_content_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"

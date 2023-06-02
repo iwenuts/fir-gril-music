@@ -21,8 +21,8 @@ android {
         applicationId "alice"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 136
-        versionName "1.3.6"
+        versionCode 137
+        versionName "1.3.7"
         multiDexEnabled true
     }
     signingConfigs {
@@ -40,10 +40,10 @@ android {
             buildConfigField('String', 'maxOpenInterstitialId', '"245ad3c885395116"')
             buildConfigField('String', 'maxBackInterstitialId', '"e6c0a2cf653c681c"')
             buildConfigField('String', 'maxDownInterstitialId', '"800faf074a16e75d"')
-
             buildConfigField('String', 'maxBannerId', '"839a4fee76c0d491"')
             buildConfigField('String', 'maxDownRewardId', '"d89f295a1d43dc2c"')
             buildConfigField('String', 'maxMrecId', '"f6e2c5f04f5aeb1d"')
+            buildConfigField('String', 'maxNativeTemplates', '"3823dd5d1aa1cbc5"')
             buildConfigField('String', 'FLURRY_API_KEY', '"9FRRKCWWHTS4BKSBZ5BB"')
 
             signingConfig signingConfigs.release
@@ -60,6 +60,7 @@ android {
             buildConfigField('String', 'maxDownInterstitialId', '"0e1d8303e7f76aaa"')
             buildConfigField('String', 'maxDownRewardId', '"e8e20783846b7aaa"')
             buildConfigField('String', 'maxMrecId', '"4cc79272cd127aaa"')
+            buildConfigField('String', 'maxNativeTemplates', '"4cc79272cd127aaa"')
 
             buildConfigField('String', 'FLURRY_API_KEY', '"debugFPTJTR6B4DZGW9V"')
 
@@ -167,8 +168,11 @@ dependencies {
     // youtube
 //    implementation 'com.github.teamnewpipe:NewPipeExtractor:19c0e8700db3af35e5dfc58e4eea50e75d7c4c61'
 //    implementation 'com.github.TeamNewPipe:NewPipeExtractor:v0.21.14'
+  //  api 'com.github.TeamNewPipe:NewPipeExtractor:5c710da160f488bb40ab2cf4469bec9bd4cefd38'
+    //    api 'com.github.TeamNewPipe:NewPipeExtractor:6a858368c86bc9a55abee586eb6c733e86c26b97'
     api 'com.github.TeamNewPipe:NewPipeExtractor:5c710da160f488bb40ab2cf4469bec9bd4cefd38'
-    //   api 'com.github.teamnewpipe:NewPipeExtractor:19c0e8700db3af35e5dfc58e4eea50e75d7c4c61'
+//    api 'com.github.TeamNewPipe:NewPipeExtractor:6a858368c86bc9a55abee586eb6c733e86c26b97'
+//    api 'com.github.TeamNewPipe:NewPipeExtractor:9ffdd0948b2ecd82655f5ff2a3e127b2b7695d5b'
 //    api 'com.github.TeamNewPipe:NewPipeExtractor:b77c72fb8826c3ffca0be5f96b066cca0a07b1c9'
     // implementation 'com.blankj:utilcodex:1.30.6'
 
@@ -197,6 +201,7 @@ dependencies {
 //    implementation 'com.applovin.mediation:mintegral-adapter:15.8.1.3'
 //    implementation 'com.applovin.mediation:bytedance-adapter:4.1.1.9.0'
 
+    implementation 'com.github.pinguo-zhouwei:MZBannerView:v2.0.2'
 
     implementation 'com.applovin:applovin-sdk:11.2.2'
     implementation 'com.applovin.mediation:unityads-adapter:+'

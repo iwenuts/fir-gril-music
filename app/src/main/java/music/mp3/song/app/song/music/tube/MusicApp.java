@@ -91,8 +91,8 @@ public class MusicApp extends MultiDexApplication implements Application.Activit
                 .build(this, BuildConfig.FLURRY_API_KEY);
         FlurryEventReport.init(this);
         BaseApiImpl.INSTANCE.initWebView(this);
-        FreeMp3Cloud.init();
-//        enableDebugMaxAd();
+//        FreeMp3Cloud.init();
+        enableDebugMaxAd();
 
 
         RecommendManager.init(this, aMathUtils.appKey);
